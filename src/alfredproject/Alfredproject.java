@@ -13,9 +13,9 @@ import java.io.*;
  * @author Ben
  */
 public class Alfredproject {
-    public static String BotName = "alfred",namestream = "", ThankYouResponse = "you are welcome, sir", command = "", OutputString = "";
+    public static String BotName = "alfred",namestream = "", ThankYouResponse = "you are welcome, sir", command = "", OutputString = "", GoodbyeResponse = "Good Bye, Sir";
     public static String FinishingStatement = "It is done";
-    public static Boolean HasLoaded = false;
+    public static Boolean HasLoaded = false, TimetoShutdown = false;
     public static GUI start = new GUI();
     public static void main(String[] args) throws IOException {
       start.show();
@@ -32,6 +32,7 @@ public class Alfredproject {
       //fix this later
       lo.Load();
       HasLoaded = true;
+
       }
     }
     public static void ReadInput(){
@@ -77,8 +78,8 @@ public class Alfredproject {
 //sends to method CommandInput()
           CommandInput(command);
           Voice();
-      }
-          
+          ShutdownCheck();
+      }  
      //namestream =
       //
       //puts command in lowercase 
@@ -93,7 +94,7 @@ public class Alfredproject {
             
             //sets text again
             start.OutputBox.setText(OutputString);
-
+            
             
            
             
@@ -102,6 +103,15 @@ public class Alfredproject {
         //sends to voice
            TextToVoice ttv = new TextToVoice();
           ttv.call(OutputString);
+    }
+    public static void ShutdownCheck(){
+            //shuts down alfred
+            //command to be used remotely
+        if(TimetoShutdown){
+            start.setVisible(false);
+            start.dispose();
+            System.exit(0);
+        }
     }
     
 }

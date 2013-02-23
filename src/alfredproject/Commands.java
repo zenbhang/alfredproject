@@ -19,12 +19,12 @@ public class Commands {
         //initialize first
         BasicTimeCommands btc = new BasicTimeCommands();
         BasicWebCommands bwc = new BasicWebCommands();
-        
+        BasicSystemCommands bsc = new BasicSystemCommands();
         
         //run command after
         btc.BasicTimeCommands(command);
         bwc.BasicWebCommands(command);
-        
+        bsc.BasicSystemCommands(command);
         
         
     }
