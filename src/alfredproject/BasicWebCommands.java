@@ -17,7 +17,7 @@ public class BasicWebCommands {
         BareBonesBrowserLauncher bbbl = new BareBonesBrowserLauncher();
         //opens url
         bbbl.openURL(url);
-
+        url="";
         
         
     }
