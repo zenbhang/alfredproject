@@ -20,7 +20,7 @@ public class Commands {
         BasicTimeCommands btc = new BasicTimeCommands();
         BasicWebCommands bwc = new BasicWebCommands();
         BasicSystemCommands bsc = new BasicSystemCommands();
-        
+        BasicWeatherCommands bwec= new BasicWeatherCommands();
         //run command after
         btc.BasicTimeCommands(command);
         bwc.BasicWebCommands(command);
