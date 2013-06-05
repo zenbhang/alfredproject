@@ -28,6 +28,10 @@ public class BasicWebCommands {
             if(command.contains("wikipedia")){
                 Wikipedia(command);
             }else{
+                if(command.contains("what is a")){
+                   WhatIs(command);
+                    
+                }
                 //wolfram alpha
             }
         }
@@ -86,5 +90,27 @@ public class BasicWebCommands {
         Alfredproject ap = new Alfredproject();
         ap.OutputString= ap.FinishingStatement;
     }
-    
+    private static void WhatIs(String command){
+        int index = command.indexOf("what is a ");
+        //compensate for what is a
+        command=command.substring(index+10);
+        String[] words=new String[100];
+        words = command.split("\\s+");
+        //turn into url for google
+        url="www.google.com/search?as_q=";
+        //turn words into url
+        int i = 0;
+        try{
+        while(words[i]!=null){
+            url = url + words[i];
+            url = url + "+";
+            i++;
+        }
+        }catch(ArrayIndexOutOfBoundsException a){
+            System.err.print("");
+        }
+        //finish off
+        Alfredproject ap = new Alfredproject();
+        ap.OutputString= ap.FinishingStatement;
+    }
 }

@@ -47,6 +47,8 @@ public class OptionsGUI extends javax.swing.JFrame {
         lblThankYouResponse = new javax.swing.JLabel();
         lblVoice1 = new javax.swing.JLabel();
         txtFinishingStatement = new javax.swing.JTextField();
+        lblzipcode = new java.awt.Label();
+        txtZipCode = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +99,11 @@ public class OptionsGUI extends javax.swing.JFrame {
 
         txtFinishingStatement.setText("It is done, sir");
 
+        lblzipcode.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        lblzipcode.setText("Zip Code");
+
+        txtZipCode.setText("55446");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,17 +126,19 @@ public class OptionsGUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnApply, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblVoice)
-                                    .addComponent(lblThankYouResponse, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblThankYouResponse, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                                     .addComponent(lblBotName)
-                                    .addComponent(lblVoice1))
+                                    .addComponent(lblVoice1)
+                                    .addComponent(lblzipcode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtBotName)
                                     .addComponent(txtVoice)
                                     .addComponent(txtThankYouResponse)
-                                    .addComponent(txtFinishingStatement))))))
+                                    .addComponent(txtFinishingStatement)
+                                    .addComponent(txtZipCode))))))
                 .addGap(55, 55, 55))
         );
         layout.setVerticalGroup(
@@ -145,14 +154,20 @@ public class OptionsGUI extends javax.swing.JFrame {
                     .addComponent(txtThankYouResponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblThankYouResponse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblVoice)
-                    .addComponent(txtVoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtVoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblVoice))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVoice1)
                     .addComponent(txtFinishingStatement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblzipcode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
                     .addComponent(btnOK)
@@ -179,13 +194,15 @@ public class OptionsGUI extends javax.swing.JFrame {
         ap.ThankYouResponse = txtThankYouResponse.getText().toLowerCase();
         //sets finishing statement
         ap.FinishingStatement = txtFinishingStatement.getText().toLowerCase();
+        //sets up zipcode
+        ap.ZipCode=txtZipCode.getText();
         try{
         SaveIO save = new SaveIO();
         save.Save();
         
         //closes options window
         } catch(IOException e){
-            
+           
         }
         
         // TODO add your handling code here:
@@ -267,9 +284,11 @@ public class OptionsGUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblTheAlfredProjectOptions;
     private javax.swing.JLabel lblVoice;
     private javax.swing.JLabel lblVoice1;
+    private java.awt.Label lblzipcode;
     private javax.swing.JTextField txtBotName;
     private javax.swing.JTextField txtFinishingStatement;
     private javax.swing.JTextField txtThankYouResponse;
     private javax.swing.JTextField txtVoice;
+    private javax.swing.JTextField txtZipCode;
     // End of variables declaration//GEN-END:variables
 }

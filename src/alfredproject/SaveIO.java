@@ -13,12 +13,13 @@ import java.util.*;
 public class SaveIO {
     public static File settings= new File("settings.txt");
     public static void Save() throws IOException{      
+        BufferedWriter writer = null;
         try{
         if(settings.exists()){
         settings.delete();
         }
         settings.createNewFile();
-        BufferedWriter writer = new BufferedWriter(new FileWriter(settings));
+        writer = new BufferedWriter(new FileWriter(settings));
         Alfredproject ap = new Alfredproject();
         //writes first
         writer.write("BotName "+ap.BotName);
@@ -30,7 +31,9 @@ public class SaveIO {
         }catch (IOException e){
             System.err.println(e);
         }
-
+        finally{
+        if (writer != null) writer.close();
+        }
             
         }
     

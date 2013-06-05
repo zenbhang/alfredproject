@@ -14,7 +14,7 @@ import java.io.*;
  */
 public class Alfredproject {
     public static String BotName = "alfred",namestream = "", ThankYouResponse = "you are welcome, sir", command = "", OutputString = "", GoodbyeResponse = "Good Bye, Sir";
-    public static String FinishingStatement = "It is done";
+    public static String FinishingStatement = "It is done",ZipCode="55447";
     public static Boolean HasLoaded = false, TimetoShutdown = false;
     public static GUI start = new GUI();
     public static void main(String[] args) throws IOException {

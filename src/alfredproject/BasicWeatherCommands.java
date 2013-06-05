@@ -22,10 +22,17 @@ public class BasicWeatherCommands {
         }
     }
     private static void Weather(){
+        //opens forecast in browser
+        BareBonesBrowserLauncher bbbl = new BareBonesBrowserLauncher();
+        String url="";
+        url="www.wunderground.com/cgi-bin/findweather/hdfForecast?query=";
         
+        bbbl.openURL(url);
         
     }
     private static void Climate(){
+        //do later, for now it just redirects to weather
+        Weather();
         
         
     }

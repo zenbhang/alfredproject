@@ -1,6 +1,6 @@
 The Alfred Project
 
-Created by Zenbhang and Killionaire.
+Created by Zenbhang.
 
 
 How to use:

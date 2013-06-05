@@ -42,11 +42,12 @@
                               <Component id="btnApply" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="lblVoice" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblThankYouResponse" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="lblThankYouResponse" pref="103" max="32767" attributes="0"/>
                                   <Component id="lblBotName" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblVoice1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblzipcode" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -54,6 +55,7 @@
                                   <Component id="txtVoice" max="32767" attributes="0"/>
                                   <Component id="txtThankYouResponse" max="32767" attributes="0"/>
                                   <Component id="txtFinishingStatement" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtZipCode" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -78,16 +80,24 @@
                   <Component id="lblThankYouResponse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblVoice" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtVoice" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtVoice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblVoice" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblVoice1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtFinishingStatement" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="124" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblzipcode" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="txtZipCode" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="94" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnOK" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -178,6 +188,19 @@
     <Component class="javax.swing.JTextField" name="txtFinishingStatement">
       <Properties>
         <Property name="text" type="java.lang.String" value="It is done, sir"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="lblzipcode">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Zip Code"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtZipCode">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="55446"/>
       </Properties>
     </Component>
   </SubComponents>

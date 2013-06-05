@@ -25,7 +25,7 @@ public class Commands {
         btc.BasicTimeCommands(command);
         bwc.BasicWebCommands(command);
         bsc.BasicSystemCommands(command);
-        
+        bwec.BasicWeatherCommands(command);
         
     }
     
