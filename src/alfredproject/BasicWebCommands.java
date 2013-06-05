@@ -30,7 +30,10 @@ public class BasicWebCommands {
             }else{
                 if(command.contains("what is a")){
                    WhatIs(command);
-                    
+                }else{
+                    if(command.contains("who is")){
+                        WhoIs(command);
+                    }
                 }
                 //wolfram alpha
             }
@@ -88,12 +91,13 @@ public class BasicWebCommands {
         }
                 //responds with finishing statement
         Alfredproject ap = new Alfredproject();
-        ap.OutputString= ap.FinishingStatement;
+        ap.OutputString= ap.FinishingStatement+", Here is the wikipedia page on "+command;
     }
     private static void WhatIs(String command){
-        int index = command.indexOf("what is a ");
+        //this and whoIs are really just copies of the google method, however with a different identifier.
+        int index = command.indexOf("what is ");
         //compensate for what is a
-        command=command.substring(index+10);
+        command=command.substring(index+8);
         String[] words=new String[100];
         words = command.split("\\s+");
         //turn into url for google
@@ -111,6 +115,29 @@ public class BasicWebCommands {
         }
         //finish off
         Alfredproject ap = new Alfredproject();
-        ap.OutputString= ap.FinishingStatement;
+        ap.OutputString= ap.FinishingStatement+", This is "+command;
+    }
+    private static void WhoIs(String command){
+        int index = command.indexOf("who is ");
+        //compensate for what is a
+        command=command.substring(index+7);
+        String[] words=new String[100];
+        words = command.split("\\s+");
+        //turn into url for google
+        url="www.google.com/search?as_q=";
+        //turn words into url
+        int i = 0;
+        try{
+        while(words[i]!=null){
+            url = url + words[i];
+            url = url + "+";
+            i++;
+        }
+        }catch(ArrayIndexOutOfBoundsException a){
+            System.err.print("");
+        }
+        //finish off
+        Alfredproject ap = new Alfredproject();
+        ap.OutputString= ap.FinishingStatement+", here is, "+command;
     }
 }
