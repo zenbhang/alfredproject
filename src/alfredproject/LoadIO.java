@@ -21,13 +21,44 @@ public class LoadIO {
         //otherwise
         
         while(reader.readLine()!=null){
+            Alfredproject ap = new Alfredproject();
+            try{
             String searcher = "";
+            
+            //botname
             searcher=reader.readLine();
             //testing purposes
             System.out.println(searcher);
-            //end of testing
-            Loader(searcher);   
-        }
+            
+            //finds botname
+            searcher = searcher.substring(8);
+            //fills in botname
+            ap.BotName=searcher;
+            
+            //thankyouresponse
+            //reads next line
+            searcher = reader.readLine();
+            //test
+            System.out.println(searcher);
+            //"thankyouresponse " is 17 chars
+            searcher = searcher.substring(17);
+            ap.ThankYouResponse= searcher;
+            
+            //finishing statement
+            searcher = reader.readLine();
+            System.out.println(searcher);
+            searcher = searcher.substring(19);
+            ap.FinishingStatement= searcher;
+            
+            //"zipcode or Weathercode "
+            searcher = reader.readLine();
+            System.out.println(searcher);
+            searcher=searcher.substring(23);
+            ap.ZipCode=searcher;
+            
+            //catch exceptions
+            }catch(IndexOutOfBoundsException e){}        
+            }
         
         //still have to add voice changer
         //
@@ -38,12 +69,5 @@ public class LoadIO {
         SaveIO save = new SaveIO();
         save.Save();
     }
-    private static void Loader(String searcher){
-        Alfredproject ap = new Alfredproject();
-        int index = searcher.indexOf("BotName ");
-        ap.BotName = searcher.substring(index);
-        index = searcher.indexOf("ThankYouResponse ");
-        ap.ThankYouResponse = searcher.substring(index);
-        
-    }
+
 }

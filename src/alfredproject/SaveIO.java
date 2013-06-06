@@ -22,11 +22,15 @@ public class SaveIO {
         writer = new BufferedWriter(new FileWriter(settings));
         Alfredproject ap = new Alfredproject();
         //writes first
+        writer.write("Settings:  do not tamper with, if you have no idea what to do.");
+        writer.newLine();
         writer.write("BotName "+ap.BotName);
         writer.newLine();
         writer.write("ThankYouResponse " + ap.ThankYouResponse);
         writer.newLine();
         writer.write("FinishingStatement "+ap.FinishingStatement);
+        writer.newLine();
+        writer.write("Zipcode or Weathercode "+ap.ZipCode);
         //writer.write("BotVoice"); add in later
         }catch (IOException e){
             System.err.println(e);

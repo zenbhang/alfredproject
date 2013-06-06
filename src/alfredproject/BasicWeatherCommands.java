@@ -23,10 +23,11 @@ public class BasicWeatherCommands {
     }
     private static void Weather(){
         //opens forecast in browser
+        Alfredproject ap = new Alfredproject();
         BareBonesBrowserLauncher bbbl = new BareBonesBrowserLauncher();
         String url="";
         url="www.wunderground.com/cgi-bin/findweather/hdfForecast?query=";
-        
+        url = url+ap.ZipCode;
         bbbl.openURL(url);
         
     }

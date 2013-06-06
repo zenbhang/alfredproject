@@ -23,6 +23,7 @@ public class OptionsGUI extends javax.swing.JFrame {
         txtBotName.setText(ap.BotName);
         txtThankYouResponse.setText(ap.ThankYouResponse);
         txtFinishingStatement.setText(ap.FinishingStatement);
+        txtZipCode.setText(ap.ZipCode);
     }
 
     /**
@@ -100,9 +101,14 @@ public class OptionsGUI extends javax.swing.JFrame {
         txtFinishingStatement.setText("It is done, sir");
 
         lblzipcode.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        lblzipcode.setText("Zip Code");
+        lblzipcode.setText("Zip Code or Weather Code");
 
         txtZipCode.setText("55446");
+        txtZipCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtZipCodeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,7 +134,7 @@ public class OptionsGUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblVoice)
-                                    .addComponent(lblThankYouResponse, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                                    .addComponent(lblThankYouResponse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblBotName)
                                     .addComponent(lblVoice1)
                                     .addComponent(lblzipcode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -195,7 +201,7 @@ public class OptionsGUI extends javax.swing.JFrame {
         //sets finishing statement
         ap.FinishingStatement = txtFinishingStatement.getText().toLowerCase();
         //sets up zipcode
-        ap.ZipCode=txtZipCode.getText();
+        ap.ZipCode=txtZipCode.getText().toLowerCase();
         try{
         SaveIO save = new SaveIO();
         save.Save();
@@ -217,6 +223,8 @@ public class OptionsGUI extends javax.swing.JFrame {
         ap.ThankYouResponse = txtThankYouResponse.getText().toLowerCase();
         //sets finishing statement
         ap.FinishingStatement = txtFinishingStatement.getText().toLowerCase();
+        //sets zipcode
+        ap.ZipCode=txtZipCode.getText().toLowerCase();
         try{
         SaveIO save = new SaveIO();
         save.Save();
@@ -235,10 +243,15 @@ public class OptionsGUI extends javax.swing.JFrame {
         txtThankYouResponse.setText("You're welcome.");
         txtVoice.setText("Kevin16");
         txtFinishingStatement.setText("It is done, sir.");
+        txtZipCode.setText("55447");
         
         
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void txtZipCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtZipCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtZipCodeActionPerformed
 
     /**
      * @param args the command line arguments

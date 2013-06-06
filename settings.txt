@@ -1,3 +1,5 @@
+Settings:  do not tamper with, if you have no idea what to do.
 BotName alfred
-ThankYouResponse you are welcome, sir
-FinishingStatement it is done
+ThankYouResponse you're welcome.
+FinishingStatement it is done, sir.
+Zipcode or Weathercode 55447
